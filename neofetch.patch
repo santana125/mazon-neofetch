@@ -1,0 +1,39 @@
+--- neofetch		2019-07-19 01:59:20.482408247 -0300
++++ neofetch.patch	2019-07-19 01:50:05.636344777 -0300
+@@ -1344,6 +1344,7 @@
+             # Variables need to be unquoted here. Only Bedrock Linux is affected.
+             # $br_prefix is fixed and won't change based on user input so this is safe either way.
+             # shellcheck disable=SC2086
++            has "banana"     && dir /var/lib/banana/desc/*
+             {
+             shopt -s nullglob
+             has "emerge"  && dir ${br_prefix}/var/db/pkg/*/*/
+@@ -8845,6 +8846,28 @@
+ EOF
+         ;;
+ 
++        "Mazon OS"*)
++            set_colors 2 2 10 1
++            read -rd '' ascii_data <<'EOF'
++${c3}                 m${c1}MMM${c3}m                 
++             m${c1}MMMMMMM${c3}mmm${c1}MMMMMM${c3}m        
++         m${c1}MMMMMMMMMMMMMMMMMMMMMMM${c3}m     
++       m${c1}MMMMMMMMMMMMMMMMMMMM${c3}m          
++     m${c1}MMMMMM${c3}mmm${c1}MMMMMMMMMMMMMMMMMMMMM${c3}m  
++   m${c1}MMMMM${c3}m   ${c1}MMMMMMMMMMMMMMMMMMMMMMMMM${c3}m
++  ${c1}MMMMM${c3}m  ${c3}m${c1}MMMMMMMMMMMMMMMMMMMMMMMMMMMM
++ MMMM${c3}m  m${c1}MMMMMMMMMMMMMMMMMMMMMMMMMM${c3}m   
++ mm   m${c1}MMMMMMMMMMMMMM${c3}m  ${c1}MMMMMMMMMMMMM${c3}m 
++      m${c1}MMMMMMMMMMM${c3}m  m${c1}MMMMMMMMMMMMMMMM 
++        MMMMMMMM   ${c3}m${c1}MMMMMMMMMMMMMMMMM${c3}m 
++            m${c1}MM${c3}m    m${c1}MMMMMMMMMMMMMMMMM${c3}m
++                         m${c1}MMMMMMMMMMMM${c3}m
++                             m${c1}MMMMMMMM${c3}m
++                               m${c1}MMMMM${c3}m 
++EOF
++        ;;
++
++
+         *)
+             case "$kernel_name" in
+                 *"BSD")
